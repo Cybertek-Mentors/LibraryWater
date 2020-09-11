@@ -1,4 +1,4 @@
-@smoke
+
 @edit
 @ELW-55
 Feature: Edit Book

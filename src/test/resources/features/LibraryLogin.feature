@@ -43,7 +43,7 @@ Feature: Users should be able to login
   Scenario: Student login with valid credential
     Given the user is on the Library app login page
     When the user logs in using "student30@library" and "IaT9YI0I"
-  @aa
+
 
   Scenario: Librarian login with valid credential
     Given the user is on the Library app login page
