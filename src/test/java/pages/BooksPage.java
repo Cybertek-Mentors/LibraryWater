@@ -41,6 +41,9 @@ public WebElement actualIsnb;
 @FindBy(xpath = "(//tbody/tr/td[6])[1]")
 public WebElement actualyear;
 
+@FindBy(xpath = "(//tbody//tr//td)[1]")
+public WebElement studentBooks;
+
 
 
 
