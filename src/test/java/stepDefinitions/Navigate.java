@@ -14,7 +14,7 @@ public class Navigate {
 
     @When("the user navigates to {string} page")
     public void the_user_navigates_to_page(String string) throws InterruptedException {
-        new WebDriverWait(Driver.get(),10).until(ExpectedConditions.elementToBeClickable(Driver.get().findElement(By.xpath("(//span[.='Books']"))));
+        //new WebDriverWait(Driver.get(),10).until(ExpectedConditions.elementToBeClickable(Driver.get().findElement(By.xpath("(//span[.='Books']"))));
 
         //Driver.get().findElement(By.xpath("//span[.='Books']")).click();
         Thread.sleep(5000);

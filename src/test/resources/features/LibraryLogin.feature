@@ -47,4 +47,4 @@ Feature: Users should be able to login
 
   Scenario: Librarian login with valid credential
     Given the user is on the Library app login page
-    When the user logs in uxsing "librarian18@library" and "rKG2sP88"
+    When the user logs in using "librarian18@library" and "rKG2sP88"

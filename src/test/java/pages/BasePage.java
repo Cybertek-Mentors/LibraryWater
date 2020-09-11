@@ -30,7 +30,7 @@ public abstract class  BasePage {
 
         switch(menu){
             case "Books":
-                Books.click();
+               BrowserUtils.clickWithJS(Books);
                 break;
             case "Users":
                 Users.click();
