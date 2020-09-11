@@ -39,10 +39,12 @@ Feature: Users should be able to login
       | student11@library   | 12345    |
       | testtest@yahoo.com  | UC0LC9Hj |
       | student25@library   |          |
+
   Scenario: Student login with valid credential
     Given the user is on the Library app login page
     When the user logs in using "student30@library" and "IaT9YI0I"
   @aa
+
   Scenario: Librarian login with valid credential
     Given the user is on the Library app login page
-    When the user logs in using "librarian18@library" and "rKG2sP88"
+    When the user logs in uxsing "librarian18@library" and "rKG2sP88"

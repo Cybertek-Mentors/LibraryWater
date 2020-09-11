@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class LibraryLoginPage {
+public class LibraryLoginPage extends BasePage {
 
     public LibraryLoginPage() {
         PageFactory.initElements(Driver.get(), this);
