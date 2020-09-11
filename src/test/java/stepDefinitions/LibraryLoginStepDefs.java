@@ -29,12 +29,14 @@ public class LibraryLoginStepDefs {
     }
 
     @Then("the user should be able to login on Library app bookpage")
-    public void the_user_should_be_able_to_login_on_Library_app_bookpage() {
+    public void the_user_should_be_able_to_login_on_Library_app_bookpage() throws InterruptedException {
+        Thread.sleep(2000);
         Assert.assertEquals("http://library2.cybertekschool.com/#books", Driver.get().getCurrentUrl());
     }
 
     @Then("the user should be able to login on Library app dashbord")
-    public void the_user_should_be_able_to_login_on_Library_app_dashbord() {
+    public void the_user_should_be_able_to_login_on_Library_app_dashbord() throws InterruptedException {
+        Thread.sleep(2000);
         Assert.assertEquals("http://library2.cybertekschool.com/#dashboard", Driver.get().getCurrentUrl());
     }
 

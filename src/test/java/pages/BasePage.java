@@ -15,7 +15,7 @@ import java.util.List;
 
 public abstract class  BasePage {
 
-    @FindBy(xpath = "//span[.='Books']")
+    @FindBy(xpath = "(//a[@class='nav-link'])[3]")
     public WebElement Books;
 
     @FindBy(xpath = "(//a[@class='nav-link'])[2]")
@@ -23,6 +23,11 @@ public abstract class  BasePage {
 
     @FindBy(xpath = "(//a[@class='nav-link'])[1]")
     public WebElement Dashboard;
+
+
+    public BasePage() {
+        PageFactory.initElements(Driver.get(), this);
+    }
 
 
 
