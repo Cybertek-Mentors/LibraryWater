@@ -18,16 +18,11 @@ public abstract class  BasePage {
     @FindBy(xpath = "//span[.='Books']")
     public WebElement Books;
 
-    @FindBy(xpath = "//span[.='Users']")
+    @FindBy(xpath = "(//a[@class='nav-link'])[2]")
     public WebElement Users;
 
-    @FindBy(xpath = "//span[.='Dashboard']")
+    @FindBy(xpath = "(//a[@class='nav-link'])[1]")
     public WebElement Dashboard;
-
-
-    public BasePage() {
-        PageFactory.initElements(Driver.get(), this);
-    }
 
 
 
