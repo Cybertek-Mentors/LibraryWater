@@ -53,5 +53,11 @@ public class EditBooks {
       //  Assert.assertEquals(booksPage.actualIsnb.getText(),isnb);
     }
 
+    @Then("user verifies the {string} tab on the screen")
+    public void user_verifies_the_tab_on_the_screen(String string) {
+        String text = new BooksPage().studentBooks.getText();
+        Assert.assertNotEquals(text, "Edit Book");
+
+    }
 
 }
