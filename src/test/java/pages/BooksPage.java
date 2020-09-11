@@ -38,7 +38,7 @@ public WebElement actualAuthor;
 @FindBy(xpath = "(//tbody/tr/td[2])[1]")
 public WebElement actualIsnb;
 
-@FindBy(xpath = "((//tbody/tr/td[6])[1]")
+@FindBy(xpath = "(//tbody/tr/td[6])[1]")
 public WebElement actualyear;
 
 
