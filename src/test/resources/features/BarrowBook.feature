@@ -8,7 +8,7 @@ Feature: As a Student I can Barrow Books
     When  the user navigate to Books module
 
 @smoke @bb @ELW-65
-  Scenario: Student User Sho@uld be able To Barrow Book
+  Scenario: Student User Should be able To Barrow Book
 
     And the user click the Barrow Book button
     Then The Book has been barrowed is verifed
