@@ -5,9 +5,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import pages.AddBookPage;
 import utilities.Driver;
+
+import javax.swing.*;
 
 public class AddBookStepDefs {
     String bookName = "";
@@ -29,7 +32,62 @@ public class AddBookStepDefs {
     public void the_user_should_be_able_to_see_Add_Book_pop_up() {
 
 
-    new AddBookPage().AddBookMenu.click();
+    Assert.assertEquals(new AddBookPage().addBookText.getText(), "Add Book");
+
+    }
+    @When("the user must fill Book Name with {string} ,ISBN with {string}, Year with {string}, Author with {string},Description with {string}")
+    public void the_user_must_fill_Book_Name_with_ISBN_with_Year_with_Author_with_Description_with(String name, String ISBN, String year, String author, String description) throws InterruptedException {
+
+        Thread.sleep(2000);
+        AddBookPage addBookPage = new AddBookPage();
+        addBookPage.BookNameInputBox.sendKeys(name);
+        addBookPage.ISBNinputBox.click();
+        addBookPage.ISBNinputBox.sendKeys(ISBN);
+        addBookPage.YearInputBox.sendKeys(year);
+        addBookPage.AuthorInputBox.sendKeys(author);
+        addBookPage.DescriptionInputBox.sendKeys(description);
+
+
+
+        Thread.sleep(2000);
+
+
+    }
+
+    @When("the user must select Book Category as {string}")
+    public void the_user_must_select_Book_Category_as(String bookCat) {
+
+//        AddBookPage addBookPage = new AddBookPage();
+//
+//        WebElement bookCategoryDropdown = addBookPage.BookCategoryDropdown;
+
+
+        Select selectObj = new Select(new AddBookPage().BookCategoryDropdown);
+
+        selectObj.selectByVisibleText(bookCat);
+
+
+    }
+
+
+
+
+    @When("the user must click Save Changes")
+    public void the_user_must_click_Save_Changes() {
+        new AddBookPage().SaveChangesButton.click();
+
+    }
+    @Then("the book should be added {string}")
+    public void the_book_should_be_added(String name) throws InterruptedException {
+        Thread.sleep(1500);
+        new AddBookPage().SearchBox.sendKeys(name);
+        Thread.sleep(1500);
+
+        Assert.assertEquals(new AddBookPage().expextedBook.getText(), name);
+
+
+
+
 
     }
 
