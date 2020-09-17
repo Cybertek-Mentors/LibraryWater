@@ -10,9 +10,9 @@ public class AddBookPage extends BasePage {
     public WebElement AddBookButton;
     @FindBy(xpath = "(//*[@id=\"add_book_form\"]/div[1]/div/div[1]/div[1]/div/input)")
     public WebElement BookNameInputBox;
-    @FindBy(xpath = "(//input)[2]")
-    public WebElement ISBNinputBox;
     @FindBy(xpath = "(//input)[3]")
+    public WebElement ISBNinputBox;
+    @FindBy(xpath = "(//input)[4]")
     public WebElement YearInputBox;
     @FindBy(xpath = "(//*[@id=\"add_book_form\"]/div[1]/div/div[2]/div[1]/div/input)")
     public WebElement AuthorInputBox;
@@ -27,8 +27,15 @@ public class AddBookPage extends BasePage {
     @FindBy(xpath = "(//*[@id=\"tbl_books_filter\"]/label/input)")
     public WebElement SearchBox;
 
+    @FindBy(xpath = "//h5[.='Add Book']")
+    public WebElement addBookText;
+
     @FindBy(css = "div#add_book_modal")
     public WebElement popUp;
+
+    @FindBy(xpath = "(//td[3])[1]")
+    public WebElement expextedBook;
+
 
 
 }
