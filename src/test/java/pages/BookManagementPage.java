@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import org.openqa.selenium.support.ui.Select;
 import utilities.Driver;
 
@@ -22,7 +21,7 @@ public class BookManagementPage extends BasePage {
     public WebElement bookrow;
 
 
-    @FindBy (css = "[name='tbl_books_length']")
+    @FindBy (css = "select[name='tbl_books_length']")
     public WebElement recordsDropDown;
 
     @FindBy(css  = "//a[@class='btn btn-primary btn-sm  ']")
@@ -34,9 +33,12 @@ public class BookManagementPage extends BasePage {
     @FindBy(css = ".card-header")
     public WebElement bookList;
 
+    @FindBy(xpath = "//a[@class='btn btn-primary btn-sm  disabled']")
+    public WebElement unabletobarrow;
+
 
     //broowed book infos
-    public String borrowedBookData = bookrow.getText();
+    //public String borrowedBookData = bookrow.getText();
 
 
     @FindBy(xpath = "//table/tbody/tr")
@@ -68,6 +70,17 @@ public class BookManagementPage extends BasePage {
 
     @FindBy(id = "book_categories")
     public WebElement mainCategoryElement;
+
+    @FindBy (xpath = "//a[@class='btn btn-primary btn-sm ']")
+    public WebElement returnBook;
+
+    @FindBy(xpath = "//div[@class='toast-message']")
+    public WebElement returnBookVerificaiton;
+
+    @FindBy(xpath = "//td[2]")
+    public List<WebElement> borrowedbookList;
+
+
 
     public WebElement editBook(String book) {
         String xpath = "//td[3][.='" + book + "']/../td/a";

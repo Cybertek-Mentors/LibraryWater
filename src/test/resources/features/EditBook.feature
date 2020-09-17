@@ -15,12 +15,13 @@ Feature: Edit Book
     Then the field should be updated to Book Name: "Book Name",  ISBN:"12345678", Year: "1900"
 
 @student
-  Scenario: Edit book as Student
 
-    Given the user is on the Library app login page
+Scenario: Edit book as Student
+  Given the user is on the Library app login page
     When the user logs in using "student11@library" and "tScBPCUr"
     And the user should be able to login on Library app bookpage
     Then user verifies the "Barrow Book" tab on the screen
+
 
 
 
