@@ -57,7 +57,7 @@ public class BarrowBookStepDefs {
 
     @When("the user navigate to Barrowing Books module" )
     public void the_user_navigate_to_Barrowing_Books_module() {
-
+        BookManagementPage bookManagementPage = new BookManagementPage();
         bookManagementPage.navigateToMenu("Borrowing Books");
 
     }
