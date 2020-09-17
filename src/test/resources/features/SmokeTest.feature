@@ -2,7 +2,7 @@
 Feature: Smoke test
 
 
-  @addBook @ELW-62 @ELW-79 @ELW-45 @ELW-18
+   @ELW-62 @ELW-79 @ELW-45 @ELW-18
   Scenario: User should be able to add book
     Given the user is on the Library app login page
     When the user logs in using "librarian18@library" and "rKG2sP88"
