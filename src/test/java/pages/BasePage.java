@@ -24,6 +24,9 @@ public abstract class  BasePage {
     @FindBy(xpath = "(//a[@class='nav-link'])[1]")
     public WebElement Dashboard;
 
+    @FindBy(xpath = "//span[text()='Borrowing Books']")
+
+    public WebElement borrowingBooks;
 
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
@@ -42,6 +45,12 @@ public abstract class  BasePage {
                 break;
             case "Dashboard":
                 Dashboard.click();
+                break;
+
+            case "Borrowing Books":
+
+                borrowingBooks.click();
+
                 break;
 
         }
