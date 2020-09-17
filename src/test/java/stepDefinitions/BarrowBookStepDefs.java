@@ -34,24 +34,25 @@ public class BarrowBookStepDefs {
         Thread.sleep(2000);
 
 
-
-
-
     }
 
     @When("the user click the Barrow Book button" )
-    public void the_user_click_the_Barrow_Book_button() {
+    public void the_user_click_the_Barrow_Book_button() throws InterruptedException {
 
-        bookManagementPage.book.click();
-
+        Thread.sleep(3000);
+        new BookManagementPage().borrowbookbutton.click();
 
     }
 
     @Then("The Book has been barrowed is verifed" )
-    public void the_Book_has_been_barrowed_is_verifed() {
+    public void the_Book_has_been_barrowed_is_verifed() throws InterruptedException {
 
-        Assert.assertTrue( "Book is borrowed...",bookManagementPage.book.isEnabled());
+        Thread.sleep(4000);
 
+        BookManagementPage bookManagementPage = new BookManagementPage();
+
+        Assert.assertEquals( "Verify that pop up is visible Book is borrowed...",
+                "The book has been borrowed...",bookManagementPage.thebookbarrowedverificiationtext.getText() );
     }
 
     @When("the user navigate to Barrowing Books module" )
@@ -74,15 +75,14 @@ public class BarrowBookStepDefs {
 
     @Then("verify that the user can return the borrowed book")
     public void verify_that_the_user_can_return_the_borrowed_book() {
-       bookManagementPage.navigateToMenu("Borrowing Books");
-       Assert.assertTrue("Verify teh book is returned", bookManagementPage.book.isEnabled());
+        bookManagementPage.navigateToMenu("Borrowing Books");
+        Assert.assertTrue("Verify teh book is returned", bookManagementPage.book.isEnabled());
     }
 
     @Then("Verify the user can see borrowed books list")
     public void verify_the_user_can_see_borrowed_books_list() {
 
         Assert.assertTrue("verify table is there", bookManagementPage.bookList.isDisplayed());
-
 
     }
 
