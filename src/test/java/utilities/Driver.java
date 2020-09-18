@@ -26,6 +26,8 @@ public class Driver {
     // for each thread, in InheritableThreadLocal we can have separate object for that thread
     // driver class will provide separate webdriver object per thread
     private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
+    private static final String GRID_URL = "http://34.232.65.118:4444/wd/hub";
+
     public static WebDriver get() {
         //if this thread doesn't have driver - create it and add to pool
         if (driverPool.get() == null) {
@@ -67,11 +69,10 @@ public class Driver {
                     WebDriverManager.getInstance(SafariDriver.class).setup();
                     driverPool.set(new SafariDriver());
                     break;
-                case "remote_chrome":
-                    ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.setCapability("platform", Platform.ANY);
+                case "remote-chrome":
                     try {
-                        driverPool.set(new RemoteWebDriver(new URL("https://cihatYAPICI_1907:1393d778-960e-4e87-b914-2a684aba15f7@ondemand.us-west-1.saucelabs.com:443/wd/hub"),chromeOptions));
+                        ChromeOptions chromeOptions = new ChromeOptions();
+                        driverPool.set(new RemoteWebDriver(new URL(GRID_URL), chromeOptions));
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
